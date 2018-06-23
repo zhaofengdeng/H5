@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="vue_det">
+    <h1>site : {{site}}</h1>
+    <h1>url : {{url}}</h1>
+    <h1>{{details()}}</h1>
+</div>
+<button type="button" onclick="editData()" >url改变成www.zhaofengdeng.com</button>
+<button type="button" onclick="editData2()" >site改变成赵丰登</button>
+<script type="text/javascript">
+	var v_dev_data={  site: "菜鸟教程",
+            url: "www.runoob.com"};
+    var vm = new Vue({
+        el: '#vue_det',
+        data:v_dev_data,
+        methods: {
+            details: function() {
+                return  this.site + " - 学的不仅是技术，更是梦想！";
+            }
+        }
+    })
+	function editData(){
+	     v_dev_data.url="www.zhaofengdeng.com";
+	}
+	function editData2(){
+	    v_dev_data.site="赵丰登";
+	}
+</script>
+
+
+</body>
+</html>
